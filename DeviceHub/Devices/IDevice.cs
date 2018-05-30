@@ -1,14 +1,13 @@
 ﻿using Alkl.DeviceHub.Connection;
+using Alkl.DeviceHub.Messages.Resources;
 
 namespace Alkl.DeviceHub.Devices
 {
     public interface IDevice
     {
-        string Vendor { get; }
+        Identity Identity { get; }
 
-        string Model { get; }
-
-        string Description { get; }
+        Status Status { get; }
 
         IConnection Connection { get; }
     }

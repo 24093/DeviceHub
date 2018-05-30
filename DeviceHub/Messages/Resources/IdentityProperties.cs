@@ -12,12 +12,9 @@ namespace Alkl.DeviceHub.Messages.Resources
             Name = name;
         }
 
-        public Dictionary<string, ITypedObject> GetProperties()
+        public IEnumerable<IResourceProperty> GetProperties()
         {
-            return new Dictionary<string, ITypedObject>
-            {
-                {nameof(Name), new TypedObject(Name)}
-            };
+            yield return new ResourceProperty(nameof(Name), Name);
         }
     }
 }
